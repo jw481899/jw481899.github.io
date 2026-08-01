@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What Shapes Happiness Around the World</title>
+  <meta name="description" content="An interactive D3 story about happiness across countries from 2015 through 2019.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <p class="label">WORLD HAPPINESS REPORT</p>
+      <h1>What Shapes Happiness Around the World?</h1>
+      <p class="summary">The happiest countries combine economic strength with social support, health, freedom, and trust. National income matters, but it does not explain the full difference between countries.</p>
+    </header>
+
+    <section class="story" aria-labelledby="storyTitle">
+      <div class="storyHeader">
+        <div class="storyText">
+          <p id="sectionLabel" class="sectionLabel"></p>
+          <h2 id="storyTitle"></h2>
+          <p id="storyCopy" class="storyCopy"></p>
+        </div>
+        <div id="controls" class="controls"></div>
+      </div>
+
+      <div id="chartArea" class="chartArea">
+        <svg id="chart" role="img" aria-labelledby="storyTitle storyCopy"></svg>
+        <div id="tooltip" class="tooltip" role="status" aria live="polite"></div>
+      </div>
+
+      <nav class="navigation" aria label="Story navigation">
+        <button id="previous" class="navButton secondary" type="button">Previous</button>
+        <div id="steps" class="steps"></div>
+        <button id="continue" class="navButton primary" type="button">Continue</button>
+      </nav>
+    </section>
+
+    <footer>
+      <p>Source: <a href="https://www.kaggle.com/datasets/unsdsn/world-happiness" target="_blank" rel="noopener noreferrer">World Happiness Report data on Kaggle</a>. The files cover 2015 through 2019.</p>
+    </footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #18232d;
+  --muted: #60707d;
+  --paper: #f6f2eb;
+  --card: #fffdf9;
+  --gold: #d79a2b;
+  --goldDark: #986516;
+  --blue: #327b91;
+  --blueLight: #cfe4e9;
+  --line: #d7d9d7;
+  --rose: #bd5b52;
+}
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+.page { width: min(1160px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 30px; }
+.intro { max-width: 940px; margin-bottom: 30px; }
+.label, .sectionLabel { margin: 0 0 10px; color: var(--goldDark); font-size: 12px; font-weight: 800; letter-spacing: .14em; }
+h1 { margin: 0; max-width: 900px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 7vw, 5.6rem); line-height: .98; letter-spacing: -.045em; }
+.summary { max-width: 850px; margin: 22px 0 0; color: var(--muted); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.08rem, 2vw, 1.35rem); line-height: 1.55; }
+.story { overflow: hidden; border: 1px solid #ddd9d0; border-radius: 18px; background: var(--card); box-shadow: 0 18px 50px rgba(39, 43, 46, .09); }
+.storyHeader { min-height: 180px; padding: 28px 34px 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 28px; }
+.storyText { max-width: 780px; }
+h2 { margin: 0 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.75rem, 3vw, 2.7rem); letter-spacing: -.025em; }
+.storyCopy { margin: 0; color: var(--muted); line-height: 1.55; }
+.controls { min-width: 230px; }
+.controlLabel { display: block; margin-bottom: 7px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+select { width: 100%; margin-bottom: 12px; padding: 10px 12px; border: 1px solid #c9cdd0; border-radius: 9px; background: white; color: var(--ink); font: inherit; }
+.chartArea { position: relative; min-height: 510px; padding: 0 18px; }
+#chart { display: block; width: 100%; height: 510px; overflow: visible; }
+.axis text { fill: var(--muted); font-size: 11px; }
+.axis path, .axis line { stroke: #aeb6bc; }
+.grid line { stroke: #dde1e2; stroke-dasharray: 2 4; }
+.grid path { display: none; }
+.axisLabel { fill: var(--muted); font-size: 12px; font-weight: 700; }
+.annotationBox { fill: rgba(255, 253, 249, .98); stroke: #c9cdd0; }
+.annotationTitle { fill: var(--ink); font-size: 13px; font-weight: 800; }
+.annotationCopy { fill: var(--muted); font-size: 12px; }
+.annotationLine { fill: none; stroke: var(--goldDark); stroke-width: 1.6; }
+.annotationDot { fill: var(--gold); stroke: white; stroke-width: 2; }
+.navigation { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 28px 25px; border-top: 1px solid #ece9e2; }
+.navButton { padding: 11px 20px; border: 0; border-radius: 999px; font-size: 15px; font-weight: 800; cursor: pointer; }
+.navButton.primary { background: var(--ink); color: white; }
+.navButton.secondary { background: #e9ecec; color: var(--ink); }
+.navButton:disabled { opacity: .35; cursor: default; }
+.steps { display: flex; align-items: center; gap: 9px; }
+.steps button { width: 11px; height: 11px; padding: 0; border: 0; border-radius: 50%; background: #c8ced0; cursor: pointer; }
+.steps button.active { width: 28px; border-radius: 999px; background: var(--gold); }
+.tooltip { position: absolute; opacity: 0; pointer-events: none; padding: 10px 12px; border-radius: 9px; background: rgba(24, 35, 45, .96); color: white; font-size: 12px; line-height: 1.45; box-shadow: 0 8px 24px rgba(0, 0, 0, .18); transform: translate(-50%, calc(-100% - 12px)); white-space: nowrap; }
+footer { max-width: 900px; margin: 18px 8px 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+footer a { color: var(--goldDark); font-weight: 700; }
+.point { cursor: crosshair; }
+@media (max-width: 760px) {
+  .page { width: min(100% - 18px, 1160px); padding-top: 28px; }
+  .storyHeader { min-height: 0; padding: 23px 20px 12px; flex-direction: column; }
+  .controls { width: 100%; }
+  .chartArea { min-height: 480px; padding: 0 4px; }
+  #chart { height: 480px; }
+  .navigation { padding: 15px 16px 20px; }
+}
